@@ -30,6 +30,9 @@ import {
 } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import ankitProfile from '@/assets/ankit-profile.jpg';
+import devopsHero from '@/assets/devops-hero-illustration.png';
+import cloudIllustration from '@/assets/cloud-illustration.png';
+import automationIllustration from '@/assets/automation-illustration.png';
 
 const Portfolio = () => {
   const { toast } = useToast();
@@ -185,174 +188,154 @@ const Portfolio = () => {
 
   return (
     <div className="min-h-screen bg-background">
-      {/* Enhanced Hero Section */}
-      <section className="hero-bg min-h-screen flex items-center justify-center relative overflow-hidden">
-        {/* Animated Particles Background */}
+      {/* Modern Hero Section */}
+      <section className="hero-modern min-h-screen flex items-center justify-center relative overflow-hidden">
+        {/* Floating geometric shapes */}
         <div className="absolute inset-0 overflow-hidden">
-          {particles.map((particle) => (
-            <div
-              key={particle.id}
-              className="absolute w-1 h-1 bg-primary/30 rounded-full animate-float"
-              style={{
-                left: `${particle.x}%`,
-                top: `${particle.y}%`,
-                width: `${particle.size}px`,
-                height: `${particle.size}px`,
-                animationDuration: `${particle.duration}s`,
-                animationDelay: `${particle.delay}s`,
-              }}
-            />
-          ))}
+          <div className="absolute top-20 left-20 w-20 h-20 bg-primary/10 rounded-full animate-float" />
+          <div className="absolute top-40 right-32 w-16 h-16 bg-secondary/10 rounded-lg rotate-45 animate-pulse" />
+          <div className="absolute bottom-32 left-40 w-12 h-12 bg-accent/10 rounded-full animate-bounce" />
         </div>
 
-        {/* Geometric Shapes */}
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-1/4 left-1/4 w-64 h-64 border border-primary/20 rounded-full animate-pulse" />
-          <div className="absolute bottom-1/4 right-1/4 w-32 h-32 border border-accent/20 rotate-45 animate-spin" style={{ animationDuration: '20s' }} />
-          <div className="absolute top-1/2 left-1/6 w-16 h-16 bg-primary/10 rotate-12 animate-float" />
-        </div>
-
-        <div className="container mx-auto px-6 text-center relative z-10">
-          <div 
-            className={`fade-in ${visibleSections.has('hero') ? 'visible' : ''}`}
-            data-section
-            id="hero"
-          >
-            {/* Profile Image with Enhanced Animation */}
-            <div className="mb-8 relative">
-              <div className="relative group">
-                <div className="absolute inset-0 bg-gradient-to-r from-primary to-accent rounded-full blur-lg opacity-75 group-hover:opacity-100 transition-opacity animate-glow" />
-                <img
-                  src={ankitProfile}
-                  alt="Ankit Pathak - DevOps Engineer"
-                  className="relative w-40 h-40 rounded-full mx-auto border-4 border-primary z-10 group-hover:scale-105 transition-transform duration-300"
-                />
-                {/* Tech Icons Orbiting */}
-                <div className="absolute inset-0 animate-spin" style={{ animationDuration: '20s' }}>
-                  <div className="absolute -top-2 left-1/2 transform -translate-x-1/2 p-2 bg-primary rounded-full">
-                    <Cloud className="h-4 w-4 text-primary-foreground" />
-                  </div>
-                  <div className="absolute top-1/2 -right-2 transform -translate-y-1/2 p-2 bg-accent rounded-full">
-                    <Server className="h-4 w-4 text-accent-foreground" />
-                  </div>
-                  <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 p-2 bg-primary rounded-full">
-                    <GitBranch className="h-4 w-4 text-primary-foreground" />
-                  </div>
-                  <div className="absolute top-1/2 -left-2 transform -translate-y-1/2 p-2 bg-accent rounded-full">
-                    <Terminal className="h-4 w-4 text-accent-foreground" />
+        <div className="container mx-auto px-6 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left Content */}
+            <div 
+              className={`fade-in ${visibleSections.has('hero') ? 'visible' : ''}`}
+              data-section
+              id="hero"
+            >
+              {/* Profile Image with Modern Design */}
+              <div className="mb-8 relative">
+                <div className="relative group">
+                  <div className="absolute inset-0 bg-gradient-to-r from-primary to-secondary rounded-2xl blur-2xl opacity-30 group-hover:opacity-50 transition-opacity" />
+                  <img
+                    src={ankitProfile}
+                    alt="Ankit Pathak - DevOps Engineer"
+                    className="relative w-32 h-32 rounded-2xl mx-auto lg:mx-0 border-4 border-background shadow-2xl z-10 group-hover:scale-105 transition-transform duration-300"
+                  />
+                  
+                  {/* Status Badge */}
+                  <div className="absolute -bottom-2 -right-2 flex items-center gap-2 bg-card border border-border rounded-full px-3 py-1 shadow-lg">
+                    <div className="w-2 h-2 bg-success rounded-full animate-pulse" />
+                    <span className="text-xs font-medium">Available</span>
                   </div>
                 </div>
               </div>
-              
-              {/* Status Indicator */}
-              <div className="absolute -bottom-2 right-1/2 transform translate-x-1/2 flex items-center gap-2 bg-card border border-border rounded-full px-3 py-1">
-                <div className="w-2 h-2 bg-success rounded-full animate-pulse" />
-                <span className="text-xs font-medium">Available for work</span>
+
+              {/* Typography */}
+              <div className="space-y-6 text-center lg:text-left">
+                <h1 className="text-5xl lg:text-7xl font-bold leading-tight">
+                  <span className="gradient-text">Ankit Pathak</span>
+                </h1>
+                
+                {/* Typing Animation */}
+                <div className="h-16 flex items-center justify-center lg:justify-start">
+                  <h2 className="text-2xl lg:text-3xl font-semibold text-primary">
+                    {typedText}
+                    <span className="animate-pulse text-accent">|</span>
+                  </h2>
+                </div>
+                
+                <p className="text-lg lg:text-xl text-muted-foreground leading-relaxed max-w-lg">
+                  Automating deployments, securing pipelines, and scaling cloud infrastructure 
+                  <span className="text-primary font-semibold"> with 1+ years of proven experience</span>
+                </p>
+
+                {/* Stats Row */}
+                <div className="grid grid-cols-3 gap-4 max-w-sm mx-auto lg:mx-0">
+                  <div className="text-center p-4 modern-card">
+                    <div className="text-2xl font-bold text-primary">3</div>
+                    <div className="text-sm text-muted-foreground">Awards</div>
+                  </div>
+                  <div className="text-center p-4 modern-card">
+                    <div className="text-2xl font-bold text-secondary">1K+</div>
+                    <div className="text-sm text-muted-foreground">Users</div>
+                  </div>
+                  <div className="text-center p-4 modern-card">
+                    <div className="text-2xl font-bold text-accent">60%</div>
+                    <div className="text-sm text-muted-foreground">Efficiency</div>
+                  </div>
+                </div>
+
+                {/* CTA Buttons */}
+                <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                  <Button 
+                    size="lg" 
+                    className="btn-primary"
+                    onClick={() => scrollToSection('projects')}
+                  >
+                    <Rocket className="mr-2 h-5 w-5" />
+                    View My Work
+                  </Button>
+                  
+                  <Button 
+                    variant="outline" 
+                    size="lg" 
+                    className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground"
+                    onClick={() => scrollToSection('contact')}
+                  >
+                    <Mail className="mr-2 h-5 w-5" />
+                    Get in Touch
+                  </Button>
+                </div>
+
+                {/* Social Links */}
+                <div className="flex justify-center lg:justify-start gap-4">
+                  <a 
+                    href="https://linkedin.com/in/ankit-pathak-8a8646207" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="p-3 bg-primary/10 hover:bg-primary hover:text-primary-foreground rounded-lg transition-all duration-300"
+                  >
+                    <Linkedin className="h-5 w-5" />
+                  </a>
+                  <a 
+                    href="https://github.com/Ankit-pathak23" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="p-3 bg-secondary/10 hover:bg-secondary hover:text-secondary-foreground rounded-lg transition-all duration-300"
+                  >
+                    <Github className="h-5 w-5" />
+                  </a>
+                  <a 
+                    href="mailto:ankishtechsolution@gmail.com"
+                    className="p-3 bg-accent/10 hover:bg-accent hover:text-accent-foreground rounded-lg transition-all duration-300"
+                  >
+                    <Mail className="h-5 w-5" />
+                  </a>
+                </div>
               </div>
             </div>
 
-            {/* Enhanced Typography */}
-            <div className="space-y-4 mb-8">
-              <h1 className="text-6xl md:text-8xl font-bold mb-4 relative">
-                <span className="gradient-text">Ankit Pathak</span>
-                <div className="absolute -inset-1 bg-gradient-to-r from-primary/20 to-accent/20 rounded-lg blur-xl -z-10" />
-              </h1>
-              
-              {/* Typing Animation */}
-              <div className="h-16 flex items-center justify-center">
-                <h2 className="text-2xl md:text-4xl font-semibold text-primary">
-                  {typedText}
-                  <span className="animate-pulse text-accent">|</span>
-                </h2>
-              </div>
-              
-              <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-                Automating deployments, securing pipelines, and scaling cloud infrastructure 
-                <span className="text-primary font-medium"> with 1+ years of experience</span>
-              </p>
-            </div>
-
-            {/* Enhanced Stats */}
-            <div className="grid grid-cols-3 gap-6 max-w-md mx-auto mb-12">
-              <div className="text-center p-4 bg-card/50 backdrop-blur-sm rounded-lg border border-border">
-                <div className="text-2xl font-bold text-primary">3</div>
-                <div className="text-sm text-muted-foreground">Spot Awards</div>
-              </div>
-              <div className="text-center p-4 bg-card/50 backdrop-blur-sm rounded-lg border border-border">
-                <div className="text-2xl font-bold text-accent">1000+</div>
-                <div className="text-sm text-muted-foreground">Users Served</div>
-              </div>
-              <div className="text-center p-4 bg-card/50 backdrop-blur-sm rounded-lg border border-border">
-                <div className="text-2xl font-bold text-primary">60%</div>
-                <div className="text-sm text-muted-foreground">Time Saved</div>
+            {/* Right Illustration */}
+            <div className="hidden lg:block relative">
+              <div className="relative">
+                <img
+                  src={devopsHero}
+                  alt="DevOps Infrastructure Illustration"
+                  className="w-full h-auto animate-float"
+                />
+                
+                {/* Floating Tech Icons */}
+                <div className="absolute top-10 left-10 p-3 bg-primary rounded-lg shadow-lg animate-bounce">
+                  <Cloud className="h-6 w-6 text-primary-foreground" />
+                </div>
+                <div className="absolute top-20 right-10 p-3 bg-secondary rounded-lg shadow-lg animate-pulse">
+                  <Server className="h-6 w-6 text-secondary-foreground" />
+                </div>
+                <div className="absolute bottom-20 left-20 p-3 bg-accent rounded-lg shadow-lg animate-float">
+                  <GitBranch className="h-6 w-6 text-accent-foreground" />
+                </div>
               </div>
             </div>
+          </div>
 
-            {/* Enhanced CTAs */}
-            <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
-              <Button 
-                size="lg" 
-                className="glow-primary relative overflow-hidden group"
-                onClick={() => scrollToSection('projects')}
-              >
-                <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary-glow opacity-0 group-hover:opacity-100 transition-opacity" />
-                <Rocket className="mr-2 h-5 w-5 relative z-10" />
-                <span className="relative z-10">View My Work</span>
-              </Button>
-              
-              <Button 
-                variant="outline" 
-                size="lg" 
-                className="glow-accent relative overflow-hidden group border-2"
-                onClick={() => scrollToSection('contact')}
-              >
-                <div className="absolute inset-0 bg-gradient-to-r from-accent/10 to-primary/10 opacity-0 group-hover:opacity-100 transition-opacity" />
-                <Mail className="mr-2 h-5 w-5 relative z-10" />
-                <span className="relative z-10">Get in Touch</span>
-              </Button>
-
-              <Button 
-                variant="ghost" 
-                size="lg" 
-                className="group"
-              >
-                <Play className="mr-2 h-5 w-5 group-hover:text-primary transition-colors" />
-                Watch Demo
-              </Button>
-            </div>
-
-            {/* Social Links */}
-            <div className="flex justify-center gap-4 mb-12">
-              <a 
-                href="https://linkedin.com/in/ankit-pathak-8a8646207" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="p-3 bg-card/50 backdrop-blur-sm border border-border rounded-lg hover:border-primary transition-colors glow-primary"
-              >
-                <Linkedin className="h-5 w-5" />
-              </a>
-              <a 
-                href="https://github.com/Ankit-pathak23" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="p-3 bg-card/50 backdrop-blur-sm border border-border rounded-lg hover:border-accent transition-colors glow-accent"
-              >
-                <Github className="h-5 w-5" />
-              </a>
-              <a 
-                href="mailto:ankishtechsolution@gmail.com"
-                className="p-3 bg-card/50 backdrop-blur-sm border border-border rounded-lg hover:border-primary transition-colors glow-primary"
-              >
-                <Mail className="h-5 w-5" />
-              </a>
-            </div>
-
-            {/* Scroll Indicator */}
-            <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-              <div className="flex flex-col items-center gap-2">
-                <span className="text-sm text-muted-foreground">Scroll to explore</span>
-                <ChevronDown className="h-6 w-6 text-primary" />
-              </div>
+          {/* Scroll Indicator */}
+          <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <div className="flex flex-col items-center gap-2">
+              <span className="text-sm text-muted-foreground">Explore my work</span>
+              <ChevronDown className="h-6 w-6 text-primary" />
             </div>
           </div>
         </div>
@@ -386,40 +369,40 @@ const Portfolio = () => {
               <div className="space-y-6">
                 <h3 className="text-2xl font-semibold mb-6">Education</h3>
                 <div className="space-y-4">
-                  <div className="tech-card">
-                    <div className="flex items-start gap-4">
-                      <div className="p-2 bg-primary rounded-lg">
-                        <Award className="h-5 w-5 text-primary-foreground" />
-                      </div>
-                      <div>
-                        <h4 className="font-semibold text-lg">B.Tech in Computer Science</h4>
-                        <p className="text-muted-foreground">Maulana Abul Kalam Azad University of Technology, West Bengal</p>
-                        <p className="text-sm text-muted-foreground">2024 • CGPA: 8.46</p>
-                      </div>
+                <div className="modern-card">
+                  <div className="flex items-start gap-4">
+                    <div className="p-3 bg-primary/10 rounded-xl">
+                      <Award className="h-6 w-6 text-primary" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-lg">B.Tech in Computer Science</h4>
+                      <p className="text-muted-foreground">Maulana Abul Kalam Azad University of Technology, West Bengal</p>
+                      <p className="text-sm text-muted-foreground">2024 • CGPA: 8.46</p>
                     </div>
                   </div>
-                  <div className="tech-card">
-                    <div className="flex items-start gap-4">
-                      <div className="p-2 bg-accent rounded-lg">
-                        <Calendar className="h-5 w-5 text-accent-foreground" />
-                      </div>
-                      <div>
-                        <h4 className="font-semibold">12th Grade</h4>
-                        <p className="text-muted-foreground">Bihar Public School (CBSE Board) • 2020</p>
-                      </div>
+                </div>
+                <div className="modern-card">
+                  <div className="flex items-start gap-4">
+                    <div className="p-3 bg-secondary/10 rounded-xl">
+                      <Calendar className="h-6 w-6 text-secondary" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold">12th Grade</h4>
+                      <p className="text-muted-foreground">Bihar Public School (CBSE Board) • 2020</p>
                     </div>
                   </div>
-                  <div className="tech-card">
-                    <div className="flex items-start gap-4">
-                      <div className="p-2 bg-accent rounded-lg">
-                        <Calendar className="h-5 w-5 text-accent-foreground" />
-                      </div>
-                      <div>
-                        <h4 className="font-semibold">10th Grade</h4>
-                        <p className="text-muted-foreground">Cambridge Senior Secondary School (CBSE Board) • 2018</p>
-                      </div>
+                </div>
+                <div className="modern-card">
+                  <div className="flex items-start gap-4">
+                    <div className="p-3 bg-accent/10 rounded-xl">
+                      <Calendar className="h-6 w-6 text-accent" />
+                    </div>
+                    <div>
+                      <h4 className="font-semibold">10th Grade</h4>
+                      <p className="text-muted-foreground">Cambridge Senior Secondary School (CBSE Board) • 2018</p>
                     </div>
                   </div>
+                </div>
                 </div>
               </div>
             </div>
@@ -438,24 +421,26 @@ const Portfolio = () => {
             <h2 className="text-4xl font-bold text-center mb-12 gradient-text">Experience</h2>
             <div className="max-w-4xl mx-auto">
               {experiences.map((exp, index) => (
-                <div key={index} className="tech-card mb-8">
-                  <div className="flex items-start gap-4 mb-6">
-                    <div className="p-3 bg-primary rounded-lg glow-primary">
-                      <Rocket className="h-6 w-6 text-primary-foreground" />
+                <div key={index} className="modern-card mb-8">
+                  <div className="flex items-start gap-6 mb-6">
+                    <div className="p-4 bg-primary/10 rounded-2xl">
+                      <Rocket className="h-8 w-8 text-primary" />
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-xl font-bold mb-2">{exp.role}</h3>
-                      <p className="text-lg text-primary mb-1">{exp.company}</p>
+                      <h3 className="text-2xl font-bold mb-2">{exp.role}</h3>
+                      <p className="text-lg text-primary font-semibold mb-1">{exp.company}</p>
                       <div className="flex items-center gap-2 text-muted-foreground">
                         <Calendar className="h-4 w-4" />
                         <span>{exp.period}</span>
                       </div>
                     </div>
                   </div>
-                  <div className="grid gap-3">
+                  <div className="grid gap-4">
                     {exp.achievements.map((achievement, idx) => (
                       <div key={idx} className="flex items-start gap-3">
-                        <Shield className="h-5 w-5 text-accent mt-0.5 flex-shrink-0" />
+                        <div className="p-2 bg-success/10 rounded-lg mt-0.5">
+                          <Shield className="h-4 w-4 text-success" />
+                        </div>
                         <span className="text-muted-foreground">{achievement}</span>
                       </div>
                     ))}
@@ -478,21 +463,21 @@ const Portfolio = () => {
             <h2 className="text-4xl font-bold text-center mb-12 gradient-text">Skills & Expertise</h2>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               {skills.map((skill, index) => (
-                <div key={index} className="tech-card">
-                  <div className="flex items-center gap-3 mb-4">
-                    <Code className="h-5 w-5 text-primary" />
-                    <div>
-                      <h4 className="font-semibold">{skill.name}</h4>
-                      <p className="text-sm text-muted-foreground">{skill.category}</p>
+                <div key={index} className="modern-card text-center">
+                  <div className="flex items-center justify-center mb-4">
+                    <div className="p-4 bg-primary/10 rounded-2xl">
+                      <Code className="h-8 w-8 text-primary" />
                     </div>
                   </div>
-                  <div className="progress-bar">
+                  <h4 className="font-semibold text-lg mb-2">{skill.name}</h4>
+                  <p className="text-sm text-muted-foreground mb-4">{skill.category}</p>
+                  <div className="progress-bar mb-2">
                     <div 
                       className="progress-fill"
                       style={{ width: `${skill.level}%` }}
                     />
                   </div>
-                  <div className="text-right text-sm text-muted-foreground mt-2">
+                  <div className="text-right text-sm font-semibold text-primary">
                     {skill.level}%
                   </div>
                 </div>
@@ -511,16 +496,22 @@ const Portfolio = () => {
             id="services"
           >
             <h2 className="text-4xl font-bold text-center mb-12 gradient-text">Services</h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
               {services.map((service, index) => {
                 const Icon = service.icon;
                 return (
-                  <div key={index} className="tech-card text-center">
-                    <div className="p-4 bg-primary/10 rounded-full w-fit mx-auto mb-4">
-                      <Icon className="h-8 w-8 text-primary" />
+                  <div key={index} className="modern-card text-center group">
+                    <div className="relative mb-6">
+                      <div className="absolute inset-0 bg-primary/5 rounded-3xl scale-110 group-hover:scale-125 transition-transform duration-300" />
+                      <div className="relative p-6 bg-primary/10 rounded-3xl w-fit mx-auto">
+                        <Icon className="h-12 w-12 text-primary" />
+                      </div>
                     </div>
-                    <h3 className="text-lg font-semibold mb-3">{service.title}</h3>
-                    <p className="text-muted-foreground text-sm">{service.description}</p>
+                    <h3 className="text-xl font-bold mb-4">{service.title}</h3>
+                    <p className="text-muted-foreground leading-relaxed">{service.description}</p>
+                    <Button variant="outline" className="mt-4 border-primary text-primary hover:bg-primary hover:text-primary-foreground">
+                      Learn More
+                    </Button>
                   </div>
                 );
               })}
@@ -540,39 +531,44 @@ const Portfolio = () => {
             <h2 className="text-4xl font-bold text-center mb-12 gradient-text">Featured Projects</h2>
             <div className="grid lg:grid-cols-2 gap-8">
               {projects.map((project, index) => (
-                <div key={index} className="tech-card">
-                  <div className="flex items-start gap-4 mb-4">
-                    <div className="p-3 bg-accent rounded-lg">
-                      <Database className="h-6 w-6 text-accent-foreground" />
+                <div key={index} className="modern-card group">
+                  <div className="flex items-start gap-6 mb-6">
+                    <div className="relative">
+                      <div className="absolute inset-0 bg-accent/20 rounded-2xl blur-lg group-hover:blur-xl transition-all duration-300" />
+                      <div className="relative p-4 bg-accent/10 rounded-2xl">
+                        <Database className="h-8 w-8 text-accent" />
+                      </div>
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                      <p className="text-muted-foreground mb-4">{project.description}</p>
+                      <h3 className="text-2xl font-bold mb-3">{project.title}</h3>
+                      <p className="text-muted-foreground leading-relaxed mb-4">{project.description}</p>
                     </div>
                   </div>
                   
-                  <div className="mb-4">
+                  <div className="mb-6">
                     <div className="flex flex-wrap gap-2">
                       {project.tech.map((tech, idx) => (
-                        <Badge key={idx} variant="secondary" className="text-xs">
+                        <Badge key={idx} variant="secondary" className="bg-primary/10 text-primary border-primary/20">
                           {tech}
                         </Badge>
                       ))}
                     </div>
                   </div>
                   
-                  <div className="space-y-2">
+                  <div className="space-y-3 mb-6">
                     {project.achievements.map((achievement, idx) => (
-                      <div key={idx} className="flex items-start gap-2">
-                        <Settings className="h-4 w-4 text-primary mt-0.5 flex-shrink-0" />
+                      <div key={idx} className="flex items-start gap-3">
+                        <div className="p-1.5 bg-success/10 rounded-lg mt-0.5">
+                          <Settings className="h-3 w-3 text-success" />
+                        </div>
                         <span className="text-sm text-muted-foreground">{achievement}</span>
                       </div>
                     ))}
                   </div>
                   
-                  <Button variant="outline" className="w-full mt-4">
+                  <Button variant="outline" className="w-full border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground">
                     <ExternalLink className="mr-2 h-4 w-4" />
-                    View Details
+                    View Project Details
                   </Button>
                 </div>
               ))}
@@ -651,23 +647,23 @@ const Portfolio = () => {
                 </div>
               </div>
               
-              <Card className="tech-card border-0">
-                <CardHeader>
-                  <CardTitle>Send a Message</CardTitle>
-                  <CardDescription>
+              <Card className="modern-card border-0 shadow-2xl">
+                <CardHeader className="text-center">
+                  <CardTitle className="text-2xl">Send a Message</CardTitle>
+                  <CardDescription className="text-lg">
                     I'd love to hear about your project. Let's discuss how I can help.
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <form onSubmit={handleSubmit} className="space-y-4">
+                  <form onSubmit={handleSubmit} className="space-y-6">
                     <div className="grid grid-cols-2 gap-4">
                       <div className="space-y-2">
-                        <Label htmlFor="name">Name</Label>
-                        <Input id="name" placeholder="Your name" required />
+                        <Label htmlFor="name" className="text-sm font-semibold">Name</Label>
+                        <Input id="name" placeholder="Your name" required className="h-12" />
                       </div>
                       <div className="space-y-2">
-                        <Label htmlFor="email">Email</Label>
-                        <Input id="email" type="email" placeholder="your@email.com" required />
+                        <Label htmlFor="email" className="text-sm font-semibold">Email</Label>
+                        <Input id="email" type="email" placeholder="your@email.com" required className="h-12" />
                       </div>
                     </div>
                     <div className="space-y-2">
